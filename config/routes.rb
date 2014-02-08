@@ -9,9 +9,13 @@ JojoPoems::Application.routes.draw do
 
   resources :licenses
 
-  resources :authors
+  resources :authors do
+    resources :poems
+  end
 
   resources :poems
+
+  post "markdown", to: "poems#markdown"
 
   root :to => "static_pages#index"
   devise_for :users, :controllers => {:registrations => "registrations"}

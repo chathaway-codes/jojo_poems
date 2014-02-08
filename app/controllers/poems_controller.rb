@@ -1,5 +1,6 @@
 class PoemsController < ApplicationController
   before_action :set_poem, only: [:show, :edit, :update, :destroy]
+  before_action :parse_markdown, only: [:update, :create]
 
   # GET /poems
   # GET /poems.json
@@ -59,6 +60,13 @@ class PoemsController < ApplicationController
       format.html { redirect_to poems_url }
       format.json { head :no_content }
     end
+  end
+
+  def markdown
+    Rails.logger.info("PARAMS: #{params.inspect}")
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink => true, :space_after_headers => true)
+    html = markdown.render(params["data"])
+    render :text => html
   end
 
   private

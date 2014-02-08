@@ -16,6 +16,7 @@ gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'redcarpet'
 gem 'holder_rails'
 group :development do
   gem 'better_errors'
