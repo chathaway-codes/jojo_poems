@@ -6,7 +6,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    if params[:id]
+      @user = User.find(params[:id])
+    else
+      @user = User.find(current_user)
+    end
+    respond_to do |format|
+      format.html { render html: @user }
+      format.json { render json: @user }
+    end
   end
 
 end

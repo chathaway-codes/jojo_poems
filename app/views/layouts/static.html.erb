@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html ng-app="jojo_poems">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Jojo Poems" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Jojo Poems" %>">
+    <%= stylesheet_link_tag "static", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

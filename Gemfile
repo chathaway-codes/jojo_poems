@@ -16,9 +16,10 @@ gem 'figaro'
 gem 'rolify'
 gem 'simple_form'
 gem 'therubyracer', :platform=>:ruby
+gem 'holder_rails'
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'binding_of_caller'
   gem 'guard-bundler'
   gem 'guard-rails'
   gem 'quiet_assets'
