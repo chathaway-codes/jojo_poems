@@ -29,3 +29,8 @@ group :development do
   gem 'rb-fsevent', :require=>false
   gem 'rb-inotify', :require=>false
 end
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
+end
+
