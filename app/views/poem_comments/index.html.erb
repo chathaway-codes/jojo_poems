@@ -1,0 +1,37 @@
+<h1>Listing poem_comments</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Poem</th>
+      <th>User</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Markup</th>
+      <th>Html</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poem_comments.each do |poem_comment| %>
+      <tr>
+        <td><%= poem_comment.poem %></td>
+        <td><%= poem_comment.user %></td>
+        <td><%= poem_comment.start %></td>
+        <td><%= poem_comment.end %></td>
+        <td><%= poem_comment.markup %></td>
+        <td><%= poem_comment.html %></td>
+        <td><%= link_to 'Show', poem_comment %></td>
+        <td><%= link_to 'Edit', edit_poem_comment_path(poem_comment) %></td>
+        <td><%= link_to 'Destroy', poem_comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poem comment', new_poem_comment_path %>

@@ -1,0 +1,37 @@
+<h1>Listing poems</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Markup</th>
+      <th>Html</th>
+      <th>License</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @poems.each do |poem| %>
+      <tr>
+        <td><%= poem.user %></td>
+        <td><%= poem.author %></td>
+        <td><%= poem.title %></td>
+        <td><%= poem.markup %></td>
+        <td><%= poem.html %></td>
+        <td><%= poem.license %></td>
+        <td><%= link_to 'Show', poem %></td>
+        <td><%= link_to 'Edit', edit_poem_path(poem) %></td>
+        <td><%= link_to 'Destroy', poem, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Poem', new_poem_path %>

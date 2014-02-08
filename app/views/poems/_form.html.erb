@@ -1,0 +1,16 @@
+<%= simple_form_for(@poem) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.association :author %>
+    <%= f.input :title %>
+    <%= f.input :markup %>
+    <%= f.input :html %>
+    <%= f.association :license %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

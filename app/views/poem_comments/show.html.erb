@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Poem:</strong>
+  <%= @poem_comment.poem %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @poem_comment.user %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @poem_comment.start %>
+</p>
+
+<p>
+  <strong>End:</strong>
+  <%= @poem_comment.end %>
+</p>
+
+<p>
+  <strong>Markup:</strong>
+  <%= @poem_comment.markup %>
+</p>
+
+<p>
+  <strong>Html:</strong>
+  <%= @poem_comment.html %>
+</p>
+
+<%= link_to 'Edit', edit_poem_comment_path(@poem_comment) %> |
+<%= link_to 'Back', poem_comments_path %>

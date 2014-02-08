@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @poem.user %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @poem.author %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @poem.title %>
+</p>
+
+<p>
+  <strong>Markup:</strong>
+  <%= @poem.markup %>
+</p>
+
+<p>
+  <strong>Html:</strong>
+  <%= @poem.html %>
+</p>
+
+<p>
+  <strong>License:</strong>
+  <%= @poem.license %>
+</p>
+
+<%= link_to 'Edit', edit_poem_path(@poem) %> |
+<%= link_to 'Back', poems_path %>

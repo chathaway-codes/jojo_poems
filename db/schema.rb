@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208023503) do
+ActiveRecord::Schema.define(version: 20140208025646) do
+
+  create_table "authors", force: true do |t|
+    t.string   "name"
+    t.datetime "dob"
+    t.string   "gender",     limit: 1
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "authors", ["user_id"], name: "index_authors_on_user_id"
+
+  create_table "licenses", force: true do |t|
+    t.string   "name"
+    t.text     "license"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "poem_comments", force: true do |t|
+    t.integer  "poem_id"
+    t.integer  "user_id"
+    t.integer  "start"
+    t.integer  "end"
+    t.text     "markup"
+    t.text     "html"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poem_comments", ["poem_id"], name: "index_poem_comments_on_poem_id"
+
+  create_table "poems", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "author_id"
+    t.string   "title"
+    t.text     "markup"
+    t.text     "html"
+    t.integer  "license_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "poems", ["author_id"], name: "index_poems_on_author_id"
+  add_index "poems", ["license_id"], name: "index_poems_on_license_id"
+  add_index "poems", ["user_id"], name: "index_poems_on_user_id"
 
   create_table "roles", force: true do |t|
     t.string   "name"
